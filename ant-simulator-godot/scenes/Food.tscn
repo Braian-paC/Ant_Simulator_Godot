@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c8kaflwy5nwnb"]
+
+[ext_resource type="Texture2D" uid="uid://bul8p81ehpkjf" path="res://assets/food_sprite.png" id="1_oug6s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o0h62"]
+radius = 8.5
+
+[node name="StaticBody2D_Food" type="StaticBody2D" unique_id=539977135]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1251636965]
+texture = ExtResource("1_oug6s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1040318874]
+shape = SubResource("CircleShape2D_o0h62")

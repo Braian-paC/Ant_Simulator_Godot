@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://crt0o5eyy3re1"]
 
 [ext_resource type="Texture2D" uid="uid://c3fhnpijk1bob" path="res://assets/tiles_sprite_02.jpg" id="1_neaw0"]
-[ext_resource type="PackedScene" uid="uid://2kj2ppkgofo7" path="res://Player.tscn" id="2_ymlca"]
-[ext_resource type="PackedScene" uid="uid://b8idu3c2geb5u" path="res://Anthill_Anthill.tscn" id="3_neaw0"]
+[ext_resource type="PackedScene" uid="uid://cn3bhyce5lte7" path="res://scenes/Player.tscn" id="2_ymlca"]
+[ext_resource type="PackedScene" uid="uid://b8idu3c2geb5u" path="res://scenes/Anthill_Anthill.tscn" id="3_neaw0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c5p8r"]
 texture = ExtResource("1_neaw0")

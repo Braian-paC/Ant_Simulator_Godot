@@ -1,6 +1,15 @@
 extends CharacterBody2D
 
-@export var speed = 400
+@export var speed = 300
+var can_change_scene = true
+
+func _unhandled_input(event):
+	if event is InputEventKey:
+		if event.pressed and event.keycode == KEY_E:
+			for i in get_slide_collision_count():
+				var collision = get_slide_collision(i)
+				if collision.get_collider().name == "StaticBody2D_Food":
+					print('teste')
 
 func get_input():
 	var input_direction = Input.get_vector("Left", "Right", "Up", "Down") # Direction of Movement
@@ -16,16 +25,21 @@ func _set_spawn():
 	if spawn:
 		global_position = spawn.global_position
 
+func _change_scene(path):
+	get_tree().change_scene_to_file(path)
+
 func get_collision():
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
 		print(collision.get_collider().name)
-		if collision.get_collider().name == "StaticBody2D_Anthill_1":
-			get_tree().change_scene_to_file("res://scenes/Anthill.tscn")
+		if collision.get_collider().name == "StaticBody2D_Anthill_1" and can_change_scene:
+			can_change_scene = false
 			GameManager.next_spawn = "Spawn_Entrance_2"
-		elif collision.get_collider().name == "StaticBody2D_Anthill_2":
-			get_tree().change_scene_to_file("res://scenes/World.tscn")
+			call_deferred("_change_scene", "res://scenes/Anthill.tscn")
+		elif collision.get_collider().name == "StaticBody2D_Anthill_2" and can_change_scene:
+			can_change_scene = false
 			GameManager.next_spawn = "Spawn_Entrance_1"
+			call_deferred("_change_scene", "res://scenes/World.tscn")
 
 func _physics_process(delta):
 	get_input()
