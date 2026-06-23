@@ -7,9 +7,4 @@
 
 ## Technologies
 
-<<<<<<< HEAD
-* Godot, LibreSprite.
-
-=======
-- GDScript, LibreSprite.
->>>>>>> 3c0049cd662c49342644bf730c6e82e1967c90da
+- GDScript and LibreSprite.
