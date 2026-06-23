@@ -21,10 +21,10 @@ func get_collision():
 		var collision = get_slide_collision(i)
 		print(collision.get_collider().name)
 		if collision.get_collider().name == "StaticBody2D_Anthill_1":
-			get_tree().change_scene_to_file("res://scenes/Anthill.tscn")
+			get_tree().change_scene_to_file("res://Anthill.tscn")
 			GameManager.next_spawn = "Spawn_Entrance_2"
 		elif collision.get_collider().name == "StaticBody2D_Anthill_2":
-			get_tree().change_scene_to_file("res://scenes/World.tscn")
+			get_tree().change_scene_to_file("res://World.tscn")
 			GameManager.next_spawn = "Spawn_Entrance_1"
 
 func _physics_process(delta):
