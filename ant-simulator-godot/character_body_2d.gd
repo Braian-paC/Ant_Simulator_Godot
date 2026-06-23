@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var speed = 300
-var can_change_scene = true
+@export var can_change_scene = true
 
 func _unhandled_input(event):
 	if event is InputEventKey:
@@ -9,7 +9,8 @@ func _unhandled_input(event):
 			for i in get_slide_collision_count():
 				var collision = get_slide_collision(i)
 				if collision.get_collider().name == "StaticBody2D_Food":
-					print('teste')
+					print('Player collide with Food!')
+					collision.get_collider().queue_free()
 
 func get_input():
 	var input_direction = Input.get_vector("Left", "Right", "Up", "Down") # Direction of Movement
@@ -31,7 +32,6 @@ func _change_scene(path):
 func get_collision():
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
-		print(collision.get_collider().name)
 		if collision.get_collider().name == "StaticBody2D_Anthill_1" and can_change_scene:
 			can_change_scene = false
 			GameManager.next_spawn = "Spawn_Entrance_2"
