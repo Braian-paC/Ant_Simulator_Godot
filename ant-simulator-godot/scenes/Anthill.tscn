@@ -14,6 +14,22 @@ texture = ExtResource("1_neaw0")
 [sub_resource type="TileSet" id="TileSet_o0h62"]
 sources/0 = SubResource("TileSetAtlasSource_c5p8r")
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_tg34y"]
+a = Vector2(-584.25, -328.75)
+b = Vector2(584.75, -327.75)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_yb5g5"]
+a = Vector2(-603, 162)
+b = Vector2(564, 161)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_a6hcq"]
+a = Vector2(-647, 551)
+b = Vector2(-642, -104)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_r1bul"]
+a = Vector2(-647, 551)
+b = Vector2(-642, -104)
+
 [node name="Node2D_Anthill" type="Node2D" unique_id=29123558]
 
 [node name="TileMap" type="TileMap" parent="." unique_id=870366625]
@@ -30,3 +46,22 @@ position = Vector2(590, 326)
 
 [node name="StaticBody2D_Anthill_2" parent="." unique_id=1953647750 instance=ExtResource("3_neaw0")]
 position = Vector2(577, 5)
+
+[node name="Border-Map" type="StaticBody2D" parent="." unique_id=1489677837]
+position = Vector2(8, 5)
+
+[node name="Cima" type="CollisionShape2D" parent="Border-Map" unique_id=1673275092]
+position = Vector2(568.25, 328.75)
+shape = SubResource("SegmentShape2D_tg34y")
+
+[node name="Baixo" type="CollisionShape2D" parent="Border-Map" unique_id=1611431133]
+position = Vector2(591, 492)
+shape = SubResource("SegmentShape2D_yb5g5")
+
+[node name="Esquerda" type="CollisionShape2D" parent="Border-Map" unique_id=1963453941]
+position = Vector2(629, 105)
+shape = SubResource("SegmentShape2D_a6hcq")
+
+[node name="Direita" type="CollisionShape2D" parent="Border-Map" unique_id=966781682]
+position = Vector2(1794, 103)
+shape = SubResource("SegmentShape2D_r1bul")
