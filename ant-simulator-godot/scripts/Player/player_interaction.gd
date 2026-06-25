@@ -8,6 +8,7 @@ func handle(player):
 
 		if GameManager.food_node:
 			var food = GameManager.food_scene.instantiate()
+			GameManager.FoodGetNode = food
 			player.get_parent().add_child(food)
 			food.global_position = player.global_position
 			
@@ -32,6 +33,7 @@ func handle(player):
 
 				if GameManager.food_col.name == food_name:
 					GameManager.food_col.queue_free()
+					
 					GameManager.food_node = true
 
 	if Input.is_action_just_pressed("ExitGame"):

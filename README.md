@@ -10,7 +10,7 @@
 - **[x]** code and folders **Organization**.
 - **[x]** **Player** rotation + collision in border of the **World** and **Anthill**.
 - **[x]** new **Anthill Tiles** sprite.
-- **[]** pick up and drop **Food** in the **Anthill**.
+- **[x]** pick up and drop **Food** in the **Anthill**.
 
 ### Technologies
 
