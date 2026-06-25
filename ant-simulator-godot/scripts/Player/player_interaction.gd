@@ -11,14 +11,27 @@ func handle(player):
 			player.get_parent().add_child(food)
 			food.global_position = player.global_position
 			
+			if GameManager.Anthill.visible:
+				print('Anthill visível')
+				GameManager.food_anthill = true
+			else:
+				print('Anthill invisível')
+				GameManager.food_anthill = false
+			if GameManager.World.visible:
+				print('World visível')
+				GameManager.food_world = true
+			else:
+				print('World invisível')
+				GameManager.food_world = false
+			
 			GameManager.food_node = false
 
 		else:
 			for i in range(player.get_slide_collision_count()):
-				var col = player.get_slide_collision(i).get_collider()
+				GameManager.food_col = player.get_slide_collision(i).get_collider()
 
-				if col.name == food_name:
-					col.queue_free()
+				if GameManager.food_col.name == food_name:
+					GameManager.food_col.queue_free()
 					GameManager.food_node = true
 
 	if Input.is_action_just_pressed("ExitGame"):
