@@ -4,9 +4,6 @@ extends CharacterBody2D
 @onready var interaction = $Interaction
 @onready var scene_handler = $SceneHandler
 
-func set_spawn():
-	global_position = GameManager.Spawn_Start.global_position
-
 func _ready():
 	call_deferred("set_spawn")
 

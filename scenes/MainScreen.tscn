@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c8kaflwy5nwnb" path="res://scenes/Food.tscn" id="3_ju4p7"]
 [ext_resource type="Texture2D" uid="uid://dqarirl5m5v0j" path="res://assets/tiles_sprite_01.jpg" id="3_lf8d6"]
 [ext_resource type="PackedScene" uid="uid://bxnf0fjr3lu3" path="res://scenes/Anthill_World.tscn" id="4_50uwr"]
+[ext_resource type="Script" uid="uid://d0k330oc3p1i8" path="res://scripts/Map/BorderSize.gd" id="8_lf8d6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ms6rp"]
 texture = ExtResource("3_lf8d6")
@@ -28,21 +29,13 @@ texture = ExtResource("1_svp2y")
 [sub_resource type="TileSet" id="TileSet_d0kku"]
 sources/0 = SubResource("TileSetAtlasSource_omtq4")
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_svp2y"]
-a = Vector2(-584.25, -328.75)
-b = Vector2(584.75, -327.75)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_omtq4"]
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_1agfe"]
-a = Vector2(-603, 162)
-b = Vector2(564, 161)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_d0kku"]
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_lf8d6"]
-a = Vector2(-647, 551)
-b = Vector2(-642, -104)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ms6rp"]
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_50uwr"]
-a = Vector2(-647, 551)
-b = Vector2(-642, -104)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_nkv16"]
 
 [node name="MainScreen" type="Node2D" unique_id=1642832126]
 
@@ -81,9 +74,6 @@ input_pickable = true
 [node name="CharacterBody2D" parent="Persistent" unique_id=1276973783 instance=ExtResource("2_ju4p7")]
 position = Vector2(329, 173)
 
-[node name="Spawn_Start" type="Marker2D" parent="Persistent" unique_id=1461968002]
-position = Vector2(567, 334)
-
 [node name="Spawn_Entrance_World" type="Marker2D" parent="Persistent" unique_id=440775883]
 position = Vector2(33, 497)
 rotation = -1.5707964
@@ -93,19 +83,16 @@ position = Vector2(575, 68)
 
 [node name="Border-Map" type="StaticBody2D" parent="Persistent" unique_id=47068689]
 position = Vector2(2, -2)
+script = ExtResource("8_lf8d6")
 
-[node name="Cima" type="CollisionShape2D" parent="Persistent/Border-Map" unique_id=591653565]
-position = Vector2(568.25, 328.75)
-shape = SubResource("SegmentShape2D_svp2y")
+[node name="Up" type="CollisionShape2D" parent="Persistent/Border-Map" unique_id=591653565]
+shape = SubResource("SegmentShape2D_omtq4")
 
-[node name="Baixo" type="CollisionShape2D" parent="Persistent/Border-Map" unique_id=583323275]
-position = Vector2(591, 492)
-shape = SubResource("SegmentShape2D_1agfe")
+[node name="Down" type="CollisionShape2D" parent="Persistent/Border-Map" unique_id=1478428200]
+shape = SubResource("SegmentShape2D_d0kku")
 
-[node name="Esquerda" type="CollisionShape2D" parent="Persistent/Border-Map" unique_id=1659110396]
-position = Vector2(629, 105)
-shape = SubResource("SegmentShape2D_lf8d6")
+[node name="Left" type="CollisionShape2D" parent="Persistent/Border-Map" unique_id=684483681]
+shape = SubResource("SegmentShape2D_ms6rp")
 
-[node name="Direita" type="CollisionShape2D" parent="Persistent/Border-Map" unique_id=1910049824]
-position = Vector2(1794, 103)
-shape = SubResource("SegmentShape2D_50uwr")
+[node name="Right" type="CollisionShape2D" parent="Persistent/Border-Map" unique_id=1576534250]
+shape = SubResource("SegmentShape2D_nkv16")

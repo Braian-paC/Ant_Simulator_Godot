@@ -6,7 +6,7 @@ var food_anthill = false
 var food_scene = preload("res://scenes/Food.tscn")
 var food_col = null
 
-@onready var Spawn_Start = get_node("/root/MainScreen/Persistent/Spawn_Start")
+@onready var Player = get_node("/root/MainScreen/Persistent/CharacterBody2D")
 @onready var Spawn_Anthill = get_node("/root/MainScreen/Persistent/Spawn_Entrance_Anthill")
 @onready var Spawn_World = get_node("/root/MainScreen/Persistent/Spawn_Entrance_World")
 @onready var World = get_node("/root/MainScreen/World_Layer/World")
@@ -16,3 +16,4 @@ var food_col = null
 func _ready():
 	World.visible = false
 	FoodGetNode.visible = false
+	Player.position = Vector2(960, 540)
